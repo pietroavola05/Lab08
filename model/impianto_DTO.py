@@ -16,7 +16,9 @@ class Impianto:
 
     def get_consumi(self):
         """ Aggiorna e Restituisce la lista di consumi (self.lista_consumi) associati all'impianto"""
-        # TODO
+        #nella Consumo_dao mi creo una lista fatta di Oggetti Consumo che prende come parametro l'id
+        self.lista_consumi = ConsumoDAO.get_consumi(self.id)
+        return self.lista_consumi
 
     def __eq__(self, other):
         return isinstance(other, Impianto) and self.id == other.id
